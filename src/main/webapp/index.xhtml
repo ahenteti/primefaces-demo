@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900" rel="stylesheet"></link>
+        <h:outputStylesheet library="css" name="styles.css"/>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p:growl id="msgs" showDetail="true" skipDetailIfEqualsSummary="true" />
+            <h:panelGrid columns="2" cellpadding="5">
+                <p:outputLabel for="dateMin" value="Date Min"/>
+                <p:datePicker id="dateMin" value="#{controller.dateMin}" showTime="true"/>
+                <p:outputLabel for="dateMax" value="Date Max"/>
+                <p:datePicker id="dateMax" value="#{controller.dateMax}" showTime="true"/>
+            </h:panelGrid>
+            <p:commandButton value="Submit" update="msgs" action="#{controller.submit}" icon="pi pi-check"/>
+        </h:form>
+
+    </h:body>
+</html>
